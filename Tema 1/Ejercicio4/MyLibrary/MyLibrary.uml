@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_qJNpQLTbEeedhPAw-3BraQ" name="RootElement">
+  <packagedElement xmi:type="uml:Class" xmi:id="_zd0oMLTbEeedhPAw-3BraQ" name="Biblioteca">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bSOxcLTcEeedhPAw-3BraQ" name="name" type="_1EE0ULTbEeedhPAw-3BraQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_1EE0ULTbEeedhPAw-3BraQ" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_2nIigLTbEeedhPAw-3BraQ" name="Integer"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_4mhnYLTbEeedhPAw-3BraQ" name="Persona">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_YZBvsLTcEeedhPAw-3BraQ" name="nombre" type="_1EE0ULTbEeedhPAw-3BraQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7QiWkLTbEeedhPAw-3BraQ" name="Articulo" isAbstract="true">
+    <ownedRule xmi:type="uml:Constraint" xmi:id="_XFrNALWCEeeFvv-e3SJHEA" name="debeEstarRegistrado">
+      <specification xmi:type="uml:LiteralString" xmi:id="_XFrNAbWCEeeFvv-e3SJHEA" name="constraintSpec" value="context Articulo inv debeEstarRegistrado:&#xD;&#xA;  self.poseedor->size()>0 implies self.bibliotecaPoseedora.miembro->includes(self.poseedor)&#xD;&#xA;"/>
+    </ownedRule>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fbtvULTcEeedhPAw-3BraQ" name="bibliotecaPoseedora" type="_zd0oMLTbEeedhPAw-3BraQ" association="_fbnosLTcEeedhPAw-3BraQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_uYq20bTcEeedhPAw-3BraQ" name="poseedor" type="_4mhnYLTbEeedhPAw-3BraQ" association="_uYnzgLTcEeedhPAw-3BraQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0EYccLTcEeedhPAw-3BraQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0Ed8ALTcEeedhPAw-3BraQ" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9zKrYLTbEeedhPAw-3BraQ" name="Revista">
+    <generalization xmi:type="uml:Generalization" xmi:id="_U1TKQLTcEeedhPAw-3BraQ" general="_7QiWkLTbEeedhPAw-3BraQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_AHzAcLTcEeedhPAw-3BraQ" name="numero" type="_2nIigLTbEeedhPAw-3BraQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_-nMJULTbEeedhPAw-3BraQ" name="Libro">
+    <generalization xmi:type="uml:Generalization" xmi:id="_WYFLoLTcEeedhPAw-3BraQ" general="_7QiWkLTbEeedhPAw-3BraQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_NIOJ0LTcEeedhPAw-3BraQ" name="titulo" visibility="public" type="_1EE0ULTbEeedhPAw-3BraQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_33dFcrTcEeedhPAw-3BraQ" name="escritor" type="_4mhnYLTbEeedhPAw-3BraQ" association="_33apMLTcEeedhPAw-3BraQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_72aOULTcEeedhPAw-3BraQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_72gU8LTcEeedhPAw-3BraQ" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fbnosLTcEeedhPAw-3BraQ" name="Pertenencia" memberEnd="_fbtvULTcEeedhPAw-3BraQ _fbuWYLTcEeedhPAw-3BraQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fbr6ILTcEeedhPAw-3BraQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fbr6IbTcEeedhPAw-3BraQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_fbuWYLTcEeedhPAw-3BraQ" name="obra" type="_7QiWkLTbEeedhPAw-3BraQ" association="_fbnosLTcEeedhPAw-3BraQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mxV5ELTcEeedhPAw-3BraQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mxkikLTcEeedhPAw-3BraQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_uYnzgLTcEeedhPAw-3BraQ" name="Prestamo" memberEnd="_uYq20bTcEeedhPAw-3BraQ _uYrd4LTcEeedhPAw-3BraQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uYqPwLTcEeedhPAw-3BraQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uYq20LTcEeedhPAw-3BraQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_uYrd4LTcEeedhPAw-3BraQ" name="obraPrestada" type="_7QiWkLTbEeedhPAw-3BraQ" association="_uYnzgLTcEeedhPAw-3BraQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_07PL8LTcEeedhPAw-3BraQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_07VSkLTcEeedhPAw-3BraQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_33apMLTcEeedhPAw-3BraQ" name="Escribir" memberEnd="_33dFcrTcEeedhPAw-3BraQ _33dsgLTcEeedhPAw-3BraQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_33dFcLTcEeedhPAw-3BraQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_33dFcbTcEeedhPAw-3BraQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_33dsgLTcEeedhPAw-3BraQ" name="libro" type="_-nMJULTbEeedhPAw-3BraQ" association="_33apMLTcEeedhPAw-3BraQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8suyULTcEeedhPAw-3BraQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8s0R4LTcEeedhPAw-3BraQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,16 @@
+Relaciones UML:
+
+agregacion: <>---
+			A<>----B
+		A (0..*)es el todo	B es una aprte de A
+		(0..*) porque B puede ser compartido entre varios As
+
+composicion: <>c--- 
+		
+			A<>c---B
+		A (0..1) es el todo	B esta dentro de A
+		(0..1) porque B no peude estar dentro de dos objetos a la vez
+
+		Coche<>c----rueda
+				Para acceder a rueda debo acceder antes al coche
+				Rueda solo puede pertenecer a un coche o a ninguno

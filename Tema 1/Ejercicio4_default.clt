@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram_Layout version="13">
+  <diagramOptions>
+    <autolayout>false</autolayout>
+    <antialiasing>false</antialiasing>
+    <showassocnames>true</showassocnames>
+    <showattributes>true</showattributes>
+    <showmultiplicities>true</showmultiplicities>
+    <showoperations>true</showoperations>
+    <showrolenames>true</showrolenames>
+    <showgrid>false</showgrid>
+  </diagramOptions>
+  <node id="Articulo" sizeCalculated="true" type="Class">
+    <name>Articulo</name>
+    <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
+      <x>105.0</x>
+      <y>114.0</y>
+    </strategy>
+    <hidden>false</hidden>
+  </node>
+  <node height="89.0" id="Biblioteca" sizeCalculated="false"
+    type="Class" width="90.419921875">
+    <name>Biblioteca</name>
+    <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
+      <x>449.0</x>
+      <y>110.0</y>
+    </strategy>
+    <hidden>false</hidden>
+  </node>
+  <node height="40.0" id="Libro" sizeCalculated="false" type="Class" width="77.13916015625">
+    <name>Libro</name>
+    <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
+      <x>24.0</x>
+      <y>27.0</y>
+    </strategy>
+    <hidden>false</hidden>
+  </node>
+  <node id="Revista" sizeCalculated="true" type="Class">
+    <name>Revista</name>
+    <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
+      <x>152.0</x>
+      <y>23.0</y>
+    </strategy>
+    <hidden>false</hidden>
+  </node>
+  <node id="Persona" sizeCalculated="true" type="Class">
+    <name>Persona</name>
+    <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyFixed">
+      <x>56.0</x>
+      <y>221.0</y>
+    </strategy>
+    <hidden>false</hidden>
+  </node>
+  <edge type="BinaryEdge">
+    <source>Biblioteca</source>
+    <target>Articulo</target>
+    <name>Pertenencia</name>
+    <properties>
+      <edgeproperty id="Pertenencia::AssociationName"
+        sizeCalculated="true" type="associationName" userDefined="true" visible="true">
+        <name>Pertenencia</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyInBetween">
+          <userOffsetX>-20.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+          <offsetX>0.0</offsetX>
+          <offsetY>-10.0</offsetY>
+          <related length="2">
+            <related0>Pertenencia::WayPoint::0</related0>
+            <related1>Pertenencia::WayPoint::1</related1>
+          </related>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Pertenencia::source::rolename"
+        sizeCalculated="true" type="rolename" userDefined="true" visible="true">
+        <name>bibliotecaPoseedora</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>-3.0</userOffsetX>
+          <userOffsetY>-21.0</userOffsetY>
+          <attached>Pertenencia::WayPoint::0</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>TOP</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Pertenencia::source::multiplicity"
+        sizeCalculated="true" type="multiplicity" userDefined="true" visible="true">
+        <name>1</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>7.0</userOffsetX>
+          <userOffsetY>-19.0</userOffsetY>
+          <attached>Pertenencia::WayPoint::0</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>BOTTOM</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Pertenencia::target::rolename"
+        sizeCalculated="true" type="rolename" userDefined="true" visible="true">
+        <name>obra</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>9.0</userOffsetX>
+          <userOffsetY>-15.0</userOffsetY>
+          <attached>Pertenencia::WayPoint::1</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>TOP</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Pertenencia::target::multiplicity"
+        sizeCalculated="true" type="multiplicity" userDefined="true" visible="true">
+        <name>*</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>37.0</userOffsetX>
+          <userOffsetY>-14.0</userOffsetY>
+          <attached>Pertenencia::WayPoint::1</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>BOTTOM</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </properties>
+    <waypoints>
+      <edgeproperty id="Pertenencia::WayPoint::0" sizeCalculated="true"
+        type="WayPoint" userDefined="true" visible="true">
+        <name>0</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToCorner">
+          <userOffsetX>2.0</userOffsetX>
+          <userOffsetY>21.03383247543286</userOffsetY>
+          <basisDeltaX>ABSOLUTE</basisDeltaX>
+          <deltaX>0.0</deltaX>
+          <maxDeltaX>1.7976931348623157E308</maxDeltaX>
+          <basisDeltaY>ABSOLUTE</basisDeltaY>
+          <deltaY>0.0</deltaY>
+          <maxDeltaY>1.7976931348623157E308</maxDeltaY>
+          <corner>NORTH_WEST</corner>
+          <relativeNodeId>Biblioteca</relativeNodeId>
+        </strategy>
+        <id>0</id>
+        <specialid>1</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Pertenencia::WayPoint::1" sizeCalculated="true"
+        type="WayPoint" userDefined="false" visible="true">
+        <name>1</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>1</id>
+        <specialid>2</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </waypoints>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="BinaryEdge">
+    <source>Persona</source>
+    <target>Articulo</target>
+    <name>Prestamo</name>
+    <properties>
+      <edgeproperty id="Prestamo::AssociationName" sizeCalculated="true"
+        type="associationName" userDefined="true" visible="true">
+        <name>Prestamo</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyInBetween">
+          <userOffsetX>33.0</userOffsetX>
+          <userOffsetY>14.0</userOffsetY>
+          <offsetX>0.0</offsetX>
+          <offsetY>-10.0</offsetY>
+          <related length="2">
+            <related0>Prestamo::WayPoint::0</related0>
+            <related1>Prestamo::WayPoint::1</related1>
+          </related>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Prestamo::source::multiplicity"
+        sizeCalculated="true" type="multiplicity" userDefined="true" visible="true">
+        <name>0..1</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>82.0</userOffsetX>
+          <userOffsetY>4.0</userOffsetY>
+          <attached>Prestamo::WayPoint::0</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>BOTTOM</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Prestamo::source::rolename"
+        sizeCalculated="true" type="rolename" userDefined="true" visible="true">
+        <name>poseedor</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>60.0</userOffsetX>
+          <userOffsetY>3.0</userOffsetY>
+          <attached>Prestamo::WayPoint::0</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>TOP</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Prestamo::target::rolename"
+        sizeCalculated="true" type="rolename" userDefined="true" visible="true">
+        <name>obraPrestada</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>76.0</userOffsetX>
+          <userOffsetY>11.0</userOffsetY>
+          <attached>Prestamo::WayPoint::1</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>TOP</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Prestamo::target::multiplicity"
+        sizeCalculated="true" type="multiplicity" userDefined="true" visible="true">
+        <name>*</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>88.0</userOffsetX>
+          <userOffsetY>14.0</userOffsetY>
+          <attached>Prestamo::WayPoint::1</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>BOTTOM</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </properties>
+    <waypoints>
+      <edgeproperty id="Prestamo::WayPoint::0" sizeCalculated="true"
+        type="WayPoint" userDefined="false" visible="true">
+        <name>0</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>0</id>
+        <specialid>1</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Prestamo::WayPoint::1" sizeCalculated="true"
+        type="WayPoint" userDefined="false" visible="true">
+        <name>1</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>1</id>
+        <specialid>2</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </waypoints>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="BinaryEdge">
+    <source>Persona</source>
+    <target>Biblioteca</target>
+    <name>Membership</name>
+    <properties>
+      <edgeproperty id="Membership::AssociationName"
+        sizeCalculated="true" type="associationName" userDefined="true" visible="true">
+        <name>Membership</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyInBetween">
+          <userOffsetX>-46.0</userOffsetX>
+          <userOffsetY>5.0</userOffsetY>
+          <offsetX>0.0</offsetX>
+          <offsetY>-10.0</offsetY>
+          <related length="2">
+            <related0>Membership::WayPoint::0</related0>
+            <related1>Membership::WayPoint::1</related1>
+          </related>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Membership::source::rolename"
+        sizeCalculated="true" type="rolename" userDefined="true" visible="true">
+        <name>miembro</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>32.0</userOffsetX>
+          <userOffsetY>14.0</userOffsetY>
+          <attached>Membership::WayPoint::0</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>TOP</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Membership::source::multiplicity"
+        sizeCalculated="true" type="multiplicity" userDefined="true" visible="true">
+        <name>*</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>79.0</userOffsetX>
+          <userOffsetY>14.0</userOffsetY>
+          <attached>Membership::WayPoint::0</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>BOTTOM</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Membership::target::rolename"
+        sizeCalculated="true" type="rolename" userDefined="true" visible="true">
+        <name>biblioteca</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>-94.0</userOffsetX>
+          <userOffsetY>30.0</userOffsetY>
+          <attached>Membership::WayPoint::1</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>TOP</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Membership::target::multiplicity"
+        sizeCalculated="true" type="multiplicity" userDefined="true" visible="true">
+        <name>*</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>-85.0</userOffsetX>
+          <userOffsetY>33.0</userOffsetY>
+          <attached>Membership::WayPoint::1</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>BOTTOM</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </properties>
+    <waypoints>
+      <edgeproperty id="Membership::WayPoint::0" sizeCalculated="true"
+        type="WayPoint" userDefined="false" visible="true">
+        <name>0</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>0</id>
+        <specialid>1</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Membership::WayPoint::1" sizeCalculated="true"
+        type="WayPoint" userDefined="true" visible="true">
+        <name>1</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToCorner">
+          <userOffsetX>159.3635544073386</userOffsetX>
+          <userOffsetY>95.0</userOffsetY>
+          <basisDeltaX>ABSOLUTE</basisDeltaX>
+          <deltaX>0.0</deltaX>
+          <maxDeltaX>1.7976931348623157E308</maxDeltaX>
+          <basisDeltaY>ABSOLUTE</basisDeltaY>
+          <deltaY>0.0</deltaY>
+          <maxDeltaY>1.7976931348623157E308</maxDeltaY>
+          <corner>NORTH_WEST</corner>
+          <relativeNodeId>Biblioteca</relativeNodeId>
+        </strategy>
+        <id>1</id>
+        <specialid>2</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </waypoints>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="BinaryEdge">
+    <source>Persona</source>
+    <target>Libro</target>
+    <name>Escribir</name>
+    <properties>
+      <edgeproperty id="Escribir::AssociationName" sizeCalculated="true"
+        type="associationName" userDefined="true" visible="true">
+        <name>Escribir</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyInBetween">
+          <userOffsetX>-26.0</userOffsetX>
+          <userOffsetY>-1.0</userOffsetY>
+          <offsetX>0.0</offsetX>
+          <offsetY>-10.0</offsetY>
+          <related length="2">
+            <related0>Escribir::WayPoint::0</related0>
+            <related1>Escribir::WayPoint::1</related1>
+          </related>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Escribir::source::multiplicity"
+        sizeCalculated="true" type="multiplicity" userDefined="true" visible="true">
+        <name>1..*</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>-1.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+          <attached>Escribir::WayPoint::0</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>BOTTOM</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Escribir::source::rolename"
+        sizeCalculated="true" type="rolename" userDefined="true" visible="true">
+        <name>escritor</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>-26.0</userOffsetX>
+          <userOffsetY>-2.0</userOffsetY>
+          <attached>Escribir::WayPoint::0</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>TOP</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Escribir::target::multiplicity"
+        sizeCalculated="true" type="multiplicity" userDefined="false" visible="true">
+        <name>*</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+          <attached>Escribir::WayPoint::1</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>BOTTOM</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Escribir::target::rolename"
+        sizeCalculated="true" type="rolename" userDefined="true" visible="true">
+        <name>libro</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToAttached">
+          <userOffsetX>-6.0</userOffsetX>
+          <userOffsetY>2.0</userOffsetY>
+          <attached>Escribir::WayPoint::1</attached>
+          <offset_x>8</offset_x>
+          <offset_y>8</offset_y>
+          <placement>TOP</placement>
+        </strategy>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </properties>
+    <waypoints>
+      <edgeproperty id="Escribir::WayPoint::0" sizeCalculated="true"
+        type="WayPoint" userDefined="false" visible="true">
+        <name>0</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>0</id>
+        <specialid>1</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Escribir::WayPoint::1" sizeCalculated="true"
+        type="WayPoint" userDefined="true" visible="true">
+        <name>1</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyRelativeToCorner">
+          <userOffsetX>32.790135679853734</userOffsetX>
+          <userOffsetY>67.0</userOffsetY>
+          <basisDeltaX>ABSOLUTE</basisDeltaX>
+          <deltaX>0.0</deltaX>
+          <maxDeltaX>1.7976931348623157E308</maxDeltaX>
+          <basisDeltaY>ABSOLUTE</basisDeltaY>
+          <deltaY>0.0</deltaY>
+          <maxDeltaY>1.7976931348623157E308</maxDeltaY>
+          <corner>NORTH_WEST</corner>
+          <relativeNodeId>Libro</relativeNodeId>
+        </strategy>
+        <id>1</id>
+        <specialid>2</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </waypoints>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="Generalization">
+    <source>Libro</source>
+    <target>Articulo</target>
+    <name>Inheritance</name>
+    <properties/>
+    <waypoints>
+      <edgeproperty id="Generalization::Libro::Articulo::WayPoint::0"
+        sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
+        <name>0</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>0</id>
+        <specialid>1</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Generalization::Libro::Articulo::WayPoint::1"
+        sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
+        <name>1</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>1</id>
+        <specialid>2</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </waypoints>
+    <hidden>false</hidden>
+  </edge>
+  <edge type="Generalization">
+    <source>Revista</source>
+    <target>Articulo</target>
+    <name>Inheritance</name>
+    <properties/>
+    <waypoints>
+      <edgeproperty id="Generalization::Revista::Articulo::WayPoint::0"
+        sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
+        <name>0</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>0</id>
+        <specialid>1</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+      <edgeproperty id="Generalization::Revista::Articulo::WayPoint::1"
+        sizeCalculated="true" type="WayPoint" userDefined="false" visible="true">
+        <name>1</name>
+        <strategy type="org.tzi.use.gui.views.diagrams.elements.positioning.StrategyAttachedIntersection">
+          <userOffsetX>0.0</userOffsetX>
+          <userOffsetY>0.0</userOffsetY>
+        </strategy>
+        <id>1</id>
+        <specialid>2</specialid>
+        <hidden>false</hidden>
+      </edgeproperty>
+    </waypoints>
+    <hidden>false</hidden>
+  </edge>
+</diagram_Layout>

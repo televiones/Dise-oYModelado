@@ -1,0 +1,61 @@
+model MyFamily
+
+enum Gender {female, male}
+
+class Person
+attributes
+  age : Integer
+  name : String
+  gender : Gender
+end
+
+association Primo between
+  Person [0..*] role primoA
+  Person [0..*] role primoB
+end
+
+association Grandrelatives between
+  Person [0..4] role abuelo
+  Person [0..*] role nieto
+end
+
+association Parenthood between
+    Person [0..2] role parents
+    Person [0..*] role child
+end
+
+association Unclenephews between
+  Person [0..*] role tio
+  Person [0..*] role sobrino
+end
+
+association Siblings between
+  Person [0..*] role hermanoA
+  Person [0..*] role hermanoB
+end
+
+association BeMarried between
+  Person [0..1] role marido
+  Person [0..1] role mujer
+end
+
+
+constraints
+
+context Person inv everyoneDiff:
+  (self.hermanoB->excludes(self) and self.hermanoA->excludes(self)) and
+  (self.primoB->excludes(self) and self.primoA->excludes(self)) and
+  (self.nieto->excludes(self) and self.abuelo->excludes(self)) and
+  (self.sobrino->excludes(self) and self.tio->excludes(self)) and
+  (self.parents->excludes(self) and self.child->excludes(self)) and
+  (self.mujer->excludes(self) and self.marido->excludes(self))
+
+context Person inv ParentsOlder:
+ self.parents->forAll(p|self.parents->notEmpty implies p.age>self.age) and
+ self.abuelo->forAll(a| self.abuelo->notEmpty implies a.age>self.age)
+
+context Person inv MaridoOMujer:
+  self.marido->size()+self.mujer->size()<=1
+
+context Person inv Onerolperperson:
+  (self.hermanoA->intersection(self.hermanoB->intersection(self.primoA->intersection(self.primoB->intersection(self.sobrino->intersection(self.tio->intersection(self.nieto->intersection(self.abuelo->intersection(self.parents->intersection(self.child))))))))))->size()=0

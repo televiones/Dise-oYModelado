@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_2RqGMLHEEeeHF7k1164q0w" name="RootElement">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_zfAGcLHGEeeHF7k1164q0w">
+    <importedPackage xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_nl0R8LHGEeeHF7k1164q0w" name="Person">
+    <ownedRule xmi:type="uml:Constraint" xmi:id="_Ljw8MLTWEeedhPAw-3BraQ" name="EveryoneDiff">
+      <specification xmi:type="uml:LiteralString" xmi:id="_Lj6GILTWEeedhPAw-3BraQ" name="constraintSpec" value="context Person inv everyoneDiff:&#xD;&#xA;  (self.hermanoB->excludes(self) and self.hermanoA->excludes(self)) and&#xD;&#xA;  (self.primoB->excludes(self) and self.primoA->excludes(self)) and&#xD;&#xA;  (self.nieto->excludes(self) and self.abuelo->excludes(self)) and&#xD;&#xA;  (self.sobrino->excludes(self) and self.tio->excludes(self)) and&#xD;&#xA;  (self.parents->excludes(self) and self.child->excludes(self)) and&#xD;&#xA;  (self.mujer->excludes(self) and self.marido->excludes(self))"/>
+    </ownedRule>
+    <ownedRule xmi:type="uml:Constraint" xmi:id="_TXFHgLTWEeedhPAw-3BraQ" name="ParentsAndGrandOlder">
+      <specification xmi:type="uml:LiteralString" xmi:id="_TXIK0LTWEeedhPAw-3BraQ" name="constraintSpec" value="context Person inv ParentsAndGrandOlder:&#xD;&#xA; self.parents->forAll(p|self.parents->notEmpty implies p.age>self.age) and&#xD;&#xA; self.abuelo->forAll(a| self.abuelo->notEmpty implies a.age>self.age)"/>
+    </ownedRule>
+    <ownedRule xmi:type="uml:Constraint" xmi:id="_bnYw0LTWEeedhPAw-3BraQ" name="MaridoOMujer">
+      <specification xmi:type="uml:LiteralString" xmi:id="_bnZ-8LTWEeedhPAw-3BraQ" name="constraintSpec" value="context Person inv MaridoOMujer:&#xD;&#xA;  self.marido->size()+self.mujer->size()&lt;=1"/>
+    </ownedRule>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BshVELHHEeeHF7k1164q0w" name="name" visibility="public" type="_tg_sALPsEeetbvm-5JSC3A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_sx0nULHHEeeHF7k1164q0w" name="age" visibility="public" type="_wGXy0LPsEeetbvm-5JSC3A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ufTc0LHHEeeHF7k1164q0w" name="gender" visibility="public" type="_p66EkLHHEeeHF7k1164q0w"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_p66EkLHHEeeHF7k1164q0w" name="Gender">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_q5X38LHHEeeHF7k1164q0w" name="male"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rUKWgLHHEeeHF7k1164q0w" name="female"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yVx_ILHHEeeHF7k1164q0w" name="Parenthood" memberEnd="_yV3esLHHEeeHF7k1164q0w _yV4FwLHHEeeHF7k1164q0w">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yV1CcLHHEeeHF7k1164q0w" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yV1pgLHHEeeHF7k1164q0w" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_yV4FwLHHEeeHF7k1164q0w" name="child" type="_nl0R8LHGEeeHF7k1164q0w" association="_yVx_ILHHEeeHF7k1164q0w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3C8gcLNJEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3DFDULNJEeeLFO2-rmZwJA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_yV3esLHHEeeHF7k1164q0w" name="parents" type="_nl0R8LHGEeeHF7k1164q0w" association="_yVx_ILHHEeeHF7k1164q0w">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1PrzELNJEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1QH38LNJEeeLFO2-rmZwJA" value="2"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_kC_oILNKEeeLFO2-rmZwJA" name="Grandrelatives" memberEnd="_kDORoLNKEeeLFO2-rmZwJA _kDXbkLNKEeeLFO2-rmZwJA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kDKnQLNKEeeLFO2-rmZwJA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kDLOULNKEeeLFO2-rmZwJA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_kDXbkLNKEeeLFO2-rmZwJA" name="abuelo" type="_nl0R8LHGEeeHF7k1164q0w" association="_kC_oILNKEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_11GX0LNKEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_12oB0LNKEeeLFO2-rmZwJA" value="4"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_kDORoLNKEeeLFO2-rmZwJA" name="nieto" type="_nl0R8LHGEeeHF7k1164q0w" association="_kC_oILNKEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0uIvwLNKEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0vEj4LNKEeeLFO2-rmZwJA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7D_ekLNKEeeLFO2-rmZwJA" name="Unclenephews" memberEnd="_7EBTwLNKEeeLFO2-rmZwJA _7EE-ILNKEeeLFO2-rmZwJA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_7EAssLNKEeeLFO2-rmZwJA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7EAssbNKEeeLFO2-rmZwJA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7EE-ILNKEeeLFO2-rmZwJA" name="sobrino" type="_nl0R8LHGEeeHF7k1164q0w" association="_7D_ekLNKEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OCjaULNLEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OD1MsLNLEeeLFO2-rmZwJA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_7EBTwLNKEeeLFO2-rmZwJA" name="tio" type="_nl0R8LHGEeeHF7k1164q0w" association="_7D_ekLNKEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NuWE4LNLEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NvO1sLNLEeeLFO2-rmZwJA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_RHcHoLNLEeeLFO2-rmZwJA" name="BeMarried" memberEnd="_RHfK8bNLEeeLFO2-rmZwJA _RHfyALNLEeeLFO2-rmZwJA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_RHej4LNLEeeLFO2-rmZwJA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_RHfK8LNLEeeLFO2-rmZwJA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_RHfyALNLEeeLFO2-rmZwJA" name="mujer" type="_nl0R8LHGEeeHF7k1164q0w" association="_RHcHoLNLEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dSOpgLNLEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dTM54LNLEeeLFO2-rmZwJA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_RHfK8bNLEeeLFO2-rmZwJA" name="marido" type="_nl0R8LHGEeeHF7k1164q0w" association="_RHcHoLNLEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eI6Z4LNLEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eJrO4LNLEeeLFO2-rmZwJA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qeE_wLNLEeeLFO2-rmZwJA" name="Primos" memberEnd="_qeGN4rNLEeeLFO2-rmZwJA _qeHcALNLEeeLFO2-rmZwJA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_qeGN4LNLEeeLFO2-rmZwJA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_qeGN4bNLEeeLFO2-rmZwJA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_qeHcALNLEeeLFO2-rmZwJA" name="primoB" type="_nl0R8LHGEeeHF7k1164q0w" association="_qeE_wLNLEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6QZpALNLEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6QfvoLNLEeeLFO2-rmZwJA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_qeGN4rNLEeeLFO2-rmZwJA" name="primoA" type="_nl0R8LHGEeeHF7k1164q0w" association="_qeE_wLNLEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5_2rkLNLEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5_9ZQLNLEeeLFO2-rmZwJA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_DrIeELNMEeeLFO2-rmZwJA" name="Siblings" memberEnd="_DrKTQrNMEeeLFO2-rmZwJA _DrLhYLNMEeeLFO2-rmZwJA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DrKTQLNMEeeLFO2-rmZwJA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DrKTQbNMEeeLFO2-rmZwJA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DrLhYLNMEeeLFO2-rmZwJA" name="hermanoB" type="_nl0R8LHGEeeHF7k1164q0w" association="_DrIeELNMEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LYGJwLNMEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LYMQYLNMEeeLFO2-rmZwJA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_DrKTQrNMEeeLFO2-rmZwJA" name="hermanoA" type="_nl0R8LHGEeeHF7k1164q0w" association="_DrIeELNMEeeLFO2-rmZwJA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LmRvsLNMEeeLFO2-rmZwJA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LmWBILNMEeeLFO2-rmZwJA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_tg_sALPsEeetbvm-5JSC3A" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_wGXy0LPsEeetbvm-5JSC3A" name="Integer"/>
+</uml:Model>

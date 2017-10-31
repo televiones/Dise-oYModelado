@@ -1,0 +1,50 @@
+model MyLibrary
+
+abstract class Articulo
+end
+
+class Libro < Articulo
+attributes
+  titulo : String
+end
+
+class Revista < Articulo
+attributes
+  numero : Integer
+end
+
+class Persona
+attributes
+  nombre : String
+end
+
+class Biblioteca
+attributes
+  name : String
+end
+
+association Membership between
+  Persona [*] role miembro
+  Biblioteca [*] role biblioteca
+end
+
+association Escribir between
+  Persona [1..*] role escritor
+  Libro [*] role libro
+end
+
+association Pertenencia between
+  Biblioteca [1] role bibliotecaPoseedora
+  Articulo [*] role obra
+end
+
+association Prestamo between
+  Persona [0..1] role poseedor
+  Articulo [0..*] role obraPrestada
+end
+
+
+constraints
+
+context Articulo inv debeEstarRegistrado:
+  self.poseedor->size()>0 implies self.bibliotecaPoseedora.miembro->includes(self.poseedor)

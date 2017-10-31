@@ -1,0 +1,61 @@
+model MyLibrary
+
+abstract class Articulo
+attributes
+  fechaE: String
+end
+
+class Libro < Articulo
+attributes
+  isbn : String
+  titulo : String
+end
+
+class Revista < Articulo
+attributes
+  issn : String
+end
+
+class Persona
+attributes
+  nombre : String
+end
+
+class Biblioteca
+attributes
+  name : String
+operations
+  prestar( usuario : Persona, obr : Articulo)
+  devolucion ( usuario : Persona, obr : Articulo)
+end
+
+association Membership between
+  Persona [*] role miembro
+  Biblioteca [*] role biblioteca
+end
+
+association Escribir between
+  Persona [1..*] role escritor
+  Libro [*] role articulo
+end
+
+association Pertenencia between
+  Biblioteca [0..1] role tenedor
+  Articulo [*] role obra
+end
+
+association Prestamo between
+  Persona [0..*] role poseedor
+  Articulo [0..*] role obraPrestada
+end
+
+
+constraints
+
+context Biblioteca :: prestar (usuario : Persona, obr : Articulo)
+  pre: miembro->includes(usuario) and obra->includes(obr) and usuario.obraPrestada->excludes(obr)
+  post: usuario.obraPrestada->includes(obr)
+
+context Biblioteca :: devolucion (usuario : Persona, obr : Articulo)
+  pre: miembro->includes(usuario) and usuario.obraPrestada->includes(obr)
+  post: usuario.obraPrestada->excludes(obr)
