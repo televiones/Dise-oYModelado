@@ -5,7 +5,7 @@ attributes
   capacity : Integer
 operations
   size():Integer
-  put(e : Elem)
+  put(e : Elem) 
   get () : Elem
 end
 
@@ -38,5 +38,5 @@ context Buffer::put(e : Elem)
 
 context Buffer::get() : Elem
   pre: self.elems->notEmpty()
-  post: result = self.elems@pre->first() and
-      self.elems@pre->() = self.elems->prepend(result)
+  post: result = self.elems@pre->asOrderedSet()->first()
+  --and    self.elems@pre = self.elems->prepend(result)
