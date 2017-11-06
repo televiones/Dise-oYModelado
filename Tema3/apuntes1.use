@@ -1,0 +1,42 @@
+model Buffer
+
+class Buffer
+attributes
+  capacity : Integer
+operations
+  size():Integer
+  put(e : Elem)
+  get () : Elem
+end
+
+class Elem
+end
+
+aggregation Contains between
+  Buffer [0..1] role buffer
+  Elem [*] role elems --ordered, para hacerlo una sequence
+end
+
+---Pueden existir 3 "tipos" de buffer, dependiendo del estado:
+  -- Si esta lleno solo tendria ops get y size
+  --Si esta vacio solo put y size
+  --Y si no, put, size y get
+
+
+constraints
+
+context Buffer inv sizeCapacity:
+  self.elems->size()<=self.capacity
+
+context Buffer::size() : Integer
+  pre: true
+  post: result = self.elems->size()
+
+context Buffer::put(e : Elem)
+  pre: self.elems->size()<self.capacity
+  post: self.elems->asOrderedSet() = (self.elems@pre->asOrderedSet())->append(e)
+
+context Buffer::get() : Elem
+  pre: self.elems->notEmpty()
+  post: result = (self.elems@pre->asOrderedSet())->first() and
+      (self.elems@pre->asOrderedSet()) = (self.elems->asOrderedSet())->prepend(result)
