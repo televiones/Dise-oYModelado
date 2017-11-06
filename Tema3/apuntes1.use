@@ -38,5 +38,5 @@ context Buffer::put(e : Elem)
 
 context Buffer::get() : Elem
   pre: self.elems->notEmpty()
-  post: result = (self.elems@pre->asOrderedSet())->first() and
-      (self.elems@pre->asOrderedSet()) = (self.elems->asOrderedSet())->prepend(result)
+  post: result = self.elems@pre->first() and
+      self.elems@pre->() = self.elems->prepend(result)
