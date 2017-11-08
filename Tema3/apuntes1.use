@@ -5,7 +5,7 @@ attributes
   capacity : Integer
 operations
   size():Integer
-  put(e : Elem) 
+  put(e : Elem)
   get () : Elem
 end
 
@@ -17,7 +17,7 @@ aggregation Contains between
   Elem [*] role elems --ordered, para hacerlo una sequence
 end
 
----Pueden existir 3 "tipos" de buffer, dependiendo del estado:
+---Pueden "existir" 3 "tipos" de buffer, dependiendo del estado:
   -- Si esta lleno solo tendria ops get y size
   --Si esta vacio solo put y size
   --Y si no, put, size y get
