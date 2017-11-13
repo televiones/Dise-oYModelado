@@ -14,7 +14,7 @@ end
 
 aggregation Contains between
   Buffer [0..1] role buffer
-  Elem [*] role elems --ordered, para hacerlo una sequence
+  Elem [*] role elems ordered -- para hacerlo una sequence
 end
 
 ---Pueden "existir" 3 "tipos" de buffer, dependiendo del estado:
